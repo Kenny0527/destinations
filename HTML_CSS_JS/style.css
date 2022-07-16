@@ -14,7 +14,7 @@
   --color-dark-variant: rgb(54, 8, 124);
   --color-background: rgb(214, 222, 225);
 
-  --card-padding: 1.8rem;
+  --card-padding: 1rem;
   --padding-1: 5rem;
 
   --box-shadow: 0 2rem 3rem var(--color-light);
@@ -44,6 +44,10 @@ h1 {
   font-size: 3.5rem;
 }
 
+h2 {
+  text-align: center;
+}
+
 header {
   border: 5px;
   padding: var(--padding-1);
@@ -52,18 +56,58 @@ header {
 
 .head_greeting {
   display: flex;
+  width: 100%;
   justify-content: center;
   align-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.container-fluid {
+.main_container {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: var(--padding-1);
+  margin-top: var(--card-padding);
 }
 
 .card {
   border-style: none;
+  min-width: 10rem;
   background: var(--color-white);
   margin: var(--card-padding);
+  padding-right: 12rem;
+}
+
+.card-body {
+  padding-top: 0%;
+}
+
+.form-label {
+  padding-top: 1rem;
+}
+
+.form-control {
+  width: 20rem;
+  min-width: 10rem;
+}
+
+.destinations {
+  margin: var(--card-padding);
+}
+
+.dest_header {
+  padding-top: 1rem;
+  padding-bottom: 1px;
+  background: var(--color-white);
+}
+
+.dest_cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  margin-top: 1rem;
 }

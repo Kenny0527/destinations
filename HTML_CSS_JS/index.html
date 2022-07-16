@@ -20,35 +20,64 @@
   </head>
   <body>
     <header class="head_greeting container-fluid">
-        <h1>Vacation Destinations WishList</h1>
-        <p>Found exciting places to visition on your next vacation? Use the form below to add them to your wishlist</p>
+      <h1>Vacation Destinations WishList</h1>
+      <p>
+        Found exciting places to visition on your next vacation? Use the form
+        below to add them to your wishlist
+      </p>
     </header>
-    <main class="container-fluid">
+    <main class="main_container container-fluid">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Example label</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-              </div>
-              <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Example label</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-              </div>
-              <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Example label</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-              </div>
-              <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Another label</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-              </div>
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="form-outline">
+            <label class="form-label" for="form12">Destination Name</label>
+            <input
+              type="text"
+              id="form12"
+              class="form-control"
+              placeholder="Enter the name of the destination"
+              required
+            />
+          </div>
+          <div class="form-outline">
+            <label class="form-label" for="form12">Location</label>
+            <input
+              type="text"
+              id="form12"
+              class="form-control"
+              placeholder="Where is it located?"
+              required
+            />
+          </div>
+          <div class="form-outline">
+            <div class="form-outline">
+              <label class="form-label" for="typeURL">Photo</label>
+              <input
+                type="url"
+                id="typeURL"
+                class="form-control"
+                placeholder="Enter an image url of the place"
+              />
+            </div>
+            <label class="form-label" for="textAreaExample">Description</label>
+            <textarea
+              class="form-control"
+              id="textAreaExample"
+              rows="4"
+              placeholder="Where is it located?"
+            ></textarea>
+          </div>
+          <a href="#" class="btn btn-primary">Add to List</a>
         </div>
       </div>
-      <div class="destinations"></div>
+      <div class="destinations">
+        <header class="dest_header">
+          <h2>Enter destination details</h2>
+        </header>
+        <section class="dest_cards">
+          <!-- Resevered for JS code-->
+        </section>
+      </div>
     </main>
     <script src="script.js"></script>
   </body>
