@@ -29,46 +29,50 @@
     <main class="main_container container-fluid">
       <div class="card">
         <div class="card-body">
-          <div class="form-outline">
-            <label class="form-label" for="form12">Destination Name</label>
-            <input
-              type="text"
-              id="form12"
-              class="form-control"
-              placeholder="Enter the name of the destination"
-              required
-            />
-          </div>
-          <div class="form-outline">
-            <label class="form-label" for="form12">Location</label>
-            <input
-              type="text"
-              id="form12"
-              class="form-control"
-              placeholder="Where is it located?"
-              required
-            />
-          </div>
-          <div class="form-outline">
+          <form id="destination_form">
             <div class="form-outline">
-              <label class="form-label" for="typeURL">Photo</label>
+              <label class="form-label" for="form12">Destination Name</label>
               <input
-                type="url"
-                id="typeURL"
+                type="text"
+                id="name"
                 class="form-control"
-                placeholder="Enter an image url of the place"
+                placeholder="Enter the name of the destination"
+                required
               />
             </div>
-            <label class="form-label" for="textAreaExample">Description</label>
-            <textarea
-              class="form-control"
-              id="textAreaExample"
-              rows="4"
-              placeholder="Where is it located?"
-            ></textarea>
-          </div>
-          <a href="#" class="btn btn-primary">Add to List</a>
-        </div>
+            <div class="form-outline">
+              <label class="form-label" for="form12">Location</label>
+              <input
+                type="text"
+                id="location"
+                class="form-control"
+                placeholder="Where is it located?"
+                required
+              />
+            </div>
+            <div class="form-outline">
+              <div class="form-outline">
+                <label class="form-label" for="typeURL">Photo</label>
+                <input
+                  type="url"
+                  id="typeURL photo"
+                  class="form-control"
+                  placeholder="Enter an image url of the place"
+                />
+              </div>
+              <label class="form-label" for="textAreaExample">Description</label>
+              <textarea
+                class="form-control"
+                id="description"
+                rows="4"
+                placeholder="Where is it located?"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-control">
+              Add a List
+            </button>
+                    </div>
+          </form>
       </div>
       <div class="destinations">
         <header class="dest_header">
