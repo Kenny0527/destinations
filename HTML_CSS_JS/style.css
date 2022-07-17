@@ -66,21 +66,26 @@ header {
 .main_container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   margin: var(--padding-1);
   margin-top: var(--card-padding);
 }
 
 .card {
-  border-style: none;
-  min-width: 10rem;
+  min-width: auto;
   background: var(--color-white);
   margin: var(--card-padding);
-  padding-right: 12rem;
+  border-style: none;
 }
 
 .card-body {
   padding-top: 0%;
+}
+
+#card_box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-right: 0px;
 }
 
 .form-label {
