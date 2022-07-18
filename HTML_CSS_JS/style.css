@@ -7,7 +7,7 @@
   --color-warning: rgb(225, 56, 60);
   --color-white: rgb(238, 245, 245);
   --color-info-dark: rgb(52, 60, 60);
-  --color-info-light: rgb(224, 240, 241);
+  --color-info-light: rgb(250, 255, 255);
   --color-dark: rgb(62, 67, 76);
   --color-light: rgba(132, 139, 200, 0.18);
   --color-primary-variant: rgb(130, 56, 242);
@@ -48,6 +48,10 @@ h2 {
   text-align: center;
 }
 
+h5 {
+  padding-top: 1.5rem;
+}
+
 header {
   border: 5px;
   padding: var(--padding-1);
@@ -70,8 +74,11 @@ header {
   margin-top: var(--card-padding);
 }
 
-.card {
+.div_spacing {
   min-width: auto;
+}
+
+.card {
   background: var(--color-white);
   margin: var(--card-padding);
   border-style: none;
@@ -79,6 +86,7 @@ header {
 
 .card-body {
   padding-top: 0%;
+  position: relative;
 }
 
 #card_box {
@@ -86,6 +94,10 @@ header {
   flex-wrap: wrap;
   flex-direction: column;
   padding-right: 0px;
+  border-style: solid;
+  background-color: var(--color-info-light);
+  box-shadow: var(--box-shadow);
+  overflow-wrap: anywhere;
 }
 
 .form-label {
@@ -113,6 +125,38 @@ header {
   flex-wrap: wrap;
 }
 
+.padding {
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-between;
+  padding-top: 0.8rem;
+}
+
+.grid-flow {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
 .btn-primary {
   margin-top: 1rem;
+}
+
+@media (max-width: 992px) {
+  .main_container {
+    flex-wrap: wrap;
+  }
+  .grid-flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .main_container {
+    flex-wrap: wrap;
+  }
+  .grid-flow {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
