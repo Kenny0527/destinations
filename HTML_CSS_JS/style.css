@@ -126,10 +126,8 @@ header {
 }
 
 .padding {
-  display: flex;
-  justify-content: flex-end;
-  justify-content: space-between;
   padding-top: 0.8rem;
+  margin: 1rem;
 }
 
 .grid-flow {
@@ -139,8 +137,24 @@ header {
   grid-template-rows: repeat(2, 1fr);
 }
 
+.description {
+  margin-bottom: 1rem;
+}
+
 .btn-primary {
   margin-top: 1rem;
+}
+
+.btn-danger {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.btn-warning {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
 }
 
 @media (max-width: 1305px) {
