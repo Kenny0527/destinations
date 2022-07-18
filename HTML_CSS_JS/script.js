@@ -140,8 +140,8 @@ function editDestinationCard(event) {
   let cardTitle = cardBodyElement.children[0];
   let locTitle = cardBodyElement.children[1];
 
-  let card = cardBodyElement.parentElement;
-  let cardPhotoUrl = card.children[0];
+  let cardElement = cardBodyElement.parentElement;
+  let cardPhotoUrl = cardElement.children[0];
 
   let newCardTitle = window.prompt("Enter new name");
   let newLocTitle = window.prompt("Enter new location");
