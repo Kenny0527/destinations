@@ -91,7 +91,8 @@ function buildDestinationCard(destForm) {
   // if the description is empty put a blank placehodler. This is
   // to help with the button formatting on the bottom of the page.
   if (destForm.description.value.length === 0) {
-    newDescrTitle.innerHTML = "   ";
+    newDescrTitle.style.color = "var(--color-info-light)";
+    newDescrTitle.innerHTML = "l";
   } else {
     newDescrTitle.innerHTML = destForm.description.value;
   }
