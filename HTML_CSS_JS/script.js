@@ -165,4 +165,10 @@ function deleteDestinationCard(event) {
   let cardBodyElement = event.target.parentElement.parentElement;
   let cardElement = cardBodyElement.parentElement;
   cardElement.remove();
+  // Update the destination container title to say "My Wishlist" if this is the first card.
+  // this is done by checking the number of children elements.
+  let wishListHeader = document.querySelector(".dest_cards");
+  if (wishListHeader.children.length === 0) {
+    document.querySelector("#wishlist").innerHTML = "Enter destination details";
+  }
 }
