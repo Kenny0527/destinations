@@ -75,7 +75,7 @@ function buildDestinationCard(destForm) {
   newDestTitle.innerHTML = destForm.name.value;
   newLocTitle.setAttribute("class", "card-title");
   newLocTitle.innerHTML = destForm.location.value;
-  newDescrTitle.setAttribute("class", "card-title");
+  newDescrTitle.setAttribute("class", "card-title description");
   btnContainer.setAttribute("class", "padding");
 
   const defaultImage =
