@@ -8,19 +8,20 @@ document
   .querySelector("#destination_form")
   .addEventListener("submit", handlePrimaryBtn);
 
-function handlePrimaryBtn(event) {
+async function handlePrimaryBtn(event) {
   // removing the default settings on the page.
   // helps with refreshing and printing to console
   event.preventDefault();
 
   // deconstructing the targt elements into their own variables.
-  const { name, location, photoUrl, description } = event.target.elements;
+  const { name, location, description } = event.target.elements;
 
+  let photoUrl = await getUnsplashPhoto(name.value, location.value);
   // destinationForm object holding user input information
   const destinationForm = {
     name,
-    location,
     photoUrl,
+    location,
     description,
   };
 
@@ -40,6 +41,18 @@ function handlePrimaryBtn(event) {
   }
 
   document.querySelector(".dest_cards").appendChild(destinationCard);
+}
+
+async function getUnsplashPhoto(destName, LocName) {
+  var apikey = "-7SxAREIOWjMrpNqZnb48Bzhr13NqIilOhZJREXp6f0";
+  let search_url = `https://api.unsplash.com/search/photos/?client_id=${apikey}&query=${destName} ${LocName}`;
+
+  const response = await fetch(search_url);
+  const data = await response.json();
+  const allPhotos = data.results;
+  const randIdx = Math.floor(Math.random() * allPhotos.length);
+  const randPhoto = allPhotos[randIdx];
+  return randPhoto.urls.thumb;
 }
 
 // TODO: the form has to be reset once the information
@@ -78,15 +91,7 @@ function buildDestinationCard(destForm) {
   newDescrTitle.setAttribute("class", "card-title description");
   btnContainer.setAttribute("class", "padding");
 
-  const defaultImage =
-    "https://lp-cms-production.imgix.net/image_browser/Golden%20Horn.jpg";
-
-  // if there is no image url, then use the defaultImage instead.
-  if (destForm.photoUrl.value.length === 0) {
-    newImage.setAttribute("src", defaultImage);
-  } else {
-    newImage.setAttribute("src", destForm.photoUrl.value);
-  }
+  newImage.setAttribute("src", destForm.photoUrl);
 
   // if the description is empty put a blank placehodler. This is
   // to help with the button formatting on the bottom of the page.
@@ -124,16 +129,6 @@ function buildDestinationCard(destForm) {
   card.appendChild(cardBody);
   return card;
 }
-/*
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-*/
 
 // TODO: setup the edit button on the card
 function editDestinationCard(event) {
